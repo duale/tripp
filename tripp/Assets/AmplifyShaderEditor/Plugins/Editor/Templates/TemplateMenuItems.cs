@@ -41,5 +41,35 @@ namespace AmplifyShaderEditor
 		{
 			AmplifyShaderEditorWindow.CreateNewTemplateShader( "e1de45c0d41f68c41b2cc20c8b9c05ef" );
 		}
+		[ MenuItem( "Assets/Create/Amplify Shader/ASESampleTemplates/DoublePassUnlit", false, 85 )]
+		public static void ApplyTemplate7()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "003dfa9c16768d048b74f75c088119d8" );
+		}
+		[ MenuItem( "Assets/Create/Amplify Shader/Particles Alpha Blended + TEXCOORD1", false, 85 )]
+		public static void ApplyTemplate8()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "39608c403216c2545817cb3fb95a1410" );
+		}
+		[ MenuItem( "Assets/Create/Amplify Shader/Particles Alpha Blended Textureless", false, 85 )]
+		public static void ApplyTemplate9()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "0e84dec801abe9344801a4c455580029" );
+		}
+		[ MenuItem( "Assets/Create/Amplify Shader/Particles Anim Alpha Blended + MV Tex", false, 85 )]
+		public static void ApplyTemplate10()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "7f168dab9088a6842a89d1cb6141f4e8" );
+		}
+		[ MenuItem( "Assets/Create/Amplify Shader/Lightweight PBR", false, 85 )]
+		public static void ApplyTemplate11()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "1976390536c6c564abb90fe41f6ee334" );
+		}
+		[ MenuItem( "Assets/Create/Amplify Shader/Lightweight Unlit", false, 85 )]
+		public static void ApplyTemplate12()
+		{
+			AmplifyShaderEditorWindow.CreateNewTemplateShader( "e2514bdcf5e5399499a9eb24d175b9db" );
+		}
 	}
 }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Amplify Test
-  m_Shader: {fileID: 4800000, guid: 1b5dc71e62ac76641947d29da7e40201, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7e5bcb82779f6f04c9608ea253046ab8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
