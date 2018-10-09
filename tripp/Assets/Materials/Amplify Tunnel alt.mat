@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Amplify Tunnel 2
+  m_Name: Amplify Tunnel alt
   m_Shader: {fileID: 4800000, guid: 55c14467c4e399a42ac49adb0b5e696b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlphaFade:
-        m_Texture: {fileID: 2800000, guid: 888dae9b0c5dc1d46bac53ea3ca2bf23, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4cc6f954f0d735341a67c858ed3c763e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -71,11 +71,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 73877f931885d6943a14beff842a0e22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample2:
-        m_Texture: {fileID: 2800000, guid: 73877f931885d6943a14beff842a0e22, type: 3}
+        m_Texture: {fileID: 2800000, guid: c4906e3c10092184d9c42285b891dfab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample3:
@@ -90,37 +90,29 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DissolveAmount: 0.236
+    - _DissolveAmount: 0
     - _DstBlend: 0
-    - _Float0: -0.4
+    - _Float0: 0
     - _Float1: 0
-    - _Float2: -0.2
-    - _Float3: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseAmount: 0.244
+    - _NoiseAmount: 0.426
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TransAmbient: 0.2
-    - _TransDirect: 1
-    - _TransNormalDistortion: 0.1
-    - _TransScattering: 2
-    - _TransShadow: 0.9
-    - _Translucency: 1
     - _USpeedDistort: 0
     - _USpeedMain: 0
     - _UVSec: 0
-    - _VSpeedDistort: -0.4
+    - _VSpeedDistort: -0.2
     - _VSpeedMain: -0.2
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color0: {r: 0.7532864, g: 0, b: 0.972549, a: 0}
+    - _Color0: {r: 0.29791465, g: 0, b: 0.972549, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
