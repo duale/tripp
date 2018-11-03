@@ -31,18 +31,29 @@ public class ParticleSystemBinding : MonoBehaviour {
 		}
 	}
 
-	public Color EmissionColor {
+	public Color StartColor {
 		get {
 			return _ps.main.startColor.colorMin;
 		}
 		set {
 			var main = _ps.main;
-			value = Utils.ColorWithAlpha(value, this.EmissionAlpha);
-			main.startColor = new ParticleSystem.MinMaxGradient(value);
+			// value = Utils.ColorWithAlpha(value, this.EmissionAlpha);
+			main.startColor = new ParticleSystem.MinMaxGradient(value, main.startColor.colorMax);
 		}
 	}
 
-	public float EmissionAlpha { get; set; }
+	public Color EndColor {
+		get {
+			return _ps.main.startColor.colorMin;
+		}
+		set {
+			var main = _ps.main;
+			// value = Utils.ColorWithAlpha(value, this.EmissionAlpha);
+			main.startColor = new ParticleSystem.MinMaxGradient(main.startColor.colorMin, value);
+		}
+	}
+
+	// public float EmissionAlpha { get; set; }
 
 	public float EmissionSpeed {
 		get {
