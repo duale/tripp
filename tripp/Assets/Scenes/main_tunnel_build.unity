@@ -19340,6 +19340,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114172185436088988, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: colorTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1427329847}
     - target: {fileID: 114286468171912172, guid: 78287a56d56b542beae944c1e08dfc95,
         type: 2}
       propertyPath: colorTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
