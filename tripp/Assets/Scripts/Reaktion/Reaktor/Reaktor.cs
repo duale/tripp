@@ -128,6 +128,11 @@ public class Reaktor : MonoBehaviour
         output = Mathf.Max(input, output - Time.deltaTime * speed);
     }
 
+    public void Reset() {
+        this.output = 0f;
+        this.peak = 0f;
+    }
+
     void OnEnable()
     {
         activeInstanceCount++;

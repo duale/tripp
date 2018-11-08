@@ -54,6 +54,7 @@ public class Remote
     public void Reset(float defaultLevel)
     {
         _defaultLevel = defaultLevel;
+        _level = _defaultLevel;
         Update();
     }
 

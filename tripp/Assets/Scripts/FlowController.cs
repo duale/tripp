@@ -9,6 +9,7 @@ public class FlowController : MonoBehaviour {
 	public MeshRenderer Fader;
 	public float FadeDuration = 2f;
 	public int MaxExperienceDuration = 300;
+	public Reaktion.Reaktor CameraRotation;
 
 	private bool _running;
 	private Coroutine _killRoutine;
@@ -45,6 +46,8 @@ public class FlowController : MonoBehaviour {
 		this.Video.SetActive(false);
 		this.WormholeContainer.SetActive(true);
 		Camera.main.transform.localEulerAngles = Vector3.zero;
+		this.CameraRotation.offset.Reset(0.5f);
+		this.CameraRotation.Reset();
 		yield return SetFaderAlpha(0f);
 
 		_killRoutine = StartCoroutine(KillCo());
@@ -57,9 +60,12 @@ public class FlowController : MonoBehaviour {
 		}
 
 		yield return SetFaderAlpha(1f);
-		this.Video.SetActive(true);
-		this.WormholeContainer.SetActive(false);
-		yield return SetFaderAlpha(0f);
+
+		UnityEngine.SceneManagement.SceneManager.LoadScene("main_tunnel_build");
+
+		// this.Video.SetActive(true);
+		// this.WormholeContainer.SetActive(false);
+		// yield return SetFaderAlpha(0f);
 	}
 
 	private YieldInstruction SetFaderAlpha(float alpha) {
