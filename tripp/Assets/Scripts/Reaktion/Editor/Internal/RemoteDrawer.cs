@@ -47,7 +47,7 @@ class RemoteDrawer : PropertyDrawer
         // Uses four rows when it has MIDI options.
         var control = (Remote.Control)propControl.intValue;
         if (control == Remote.Control.MidiKnob ||
-            control == Remote.Control.MidiNote) return 4;
+            control == Remote.Control.MidiNote) return 5;
 
         // Expand if it's enabled.
         return control > 0 ? 3 : 1;
@@ -110,8 +110,15 @@ class RemoteDrawer : PropertyDrawer
         }
 
         // Curve editor.
-        if (propControl.hasMultipleDifferentValues || control != Remote.Control.Off)
+        if (propControl.hasMultipleDifferentValues || control != Remote.Control.Off) {
             EditorGUI.PropertyField(position, property.FindPropertyRelative("_curve"));
+            position.y += nextLine;
+        }
+
+        if (propControl.hasMultipleDifferentValues || control != Remote.Control.Off) {
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("_defaultLevel"));
+            position.y += nextLine;
+        }   
 
         EditorGUI.EndProperty();
     }

@@ -45,7 +45,7 @@ public class Remote
     [SerializeField] AnimationCurve _curve = AnimationCurve.Linear(0, 0, 1, 1);
 
     // Default value.
-    float _defaultLevel;
+    [SerializeField] float _defaultLevel;
 
     // Current value.
     float _level;
