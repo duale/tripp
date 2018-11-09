@@ -37,12 +37,14 @@ public class FlowController : MonoBehaviour {
 	}
 
 	private IEnumerator IntroCo() {
+		Camera.main.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>().enabled = false;
 		this.Video.SetActive(true);
 		yield return SetFaderAlpha(0f);
 	}
 
 	private IEnumerator BeginCo() {
 		yield return SetFaderAlpha(1f);
+		Camera.main.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>().enabled = true;
 		this.Video.SetActive(false);
 		this.WormholeContainer.SetActive(true);
 		Camera.main.transform.localEulerAngles = Vector3.zero;
