@@ -38,6 +38,7 @@ public class FlowController : MonoBehaviour {
 
 	private IEnumerator IntroCo() {
 		Camera.main.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>().enabled = false;
+		this.WormholeContainer.SetActive(false);
 		this.Video.SetActive(true);
 		yield return SetFaderAlpha(0f);
 	}
