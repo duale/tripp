@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6cae18653ae22d546a70d209ce1ad4e3
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _MainTex: {fileID: 2800000, guid: 73877f931885d6943a14beff842a0e22, type: 3}
+  - _NoiseTex: {fileID: 2800000, guid: c4906e3c10092184d9c42285b891dfab, type: 3}
+  - _SeamGradient: {fileID: 2800000, guid: c49dae98b2bc44e499f845caca0de39d, type: 3}
+  - _AlphaFade: {fileID: 2800000, guid: 4cc6f954f0d735341a67c858ed3c763e, type: 3}
+  - _TextureSample0: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
