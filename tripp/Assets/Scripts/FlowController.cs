@@ -72,12 +72,14 @@ public class FlowController : MonoBehaviour {
 	}
 
 	private YieldInstruction SetFaderAlpha(float alpha) {
-		return DOTween.ToAlpha(() => this.Fader.sharedMaterial.color, (x) => this.Fader.sharedMaterial.color = x, alpha, this.FadeDuration)
-			.WaitForCompletion();
+		Tweener t = DOTween.ToAlpha(() => this.Fader.sharedMaterial.color, (x) => this.Fader.sharedMaterial.color = x, alpha, this.FadeDuration);
+		t.SetUpdate(true);
+
+		return t.WaitForCompletion();
 	}
 
 	private IEnumerator KillCo() {
-		yield return new WaitForSeconds(this.MaxExperienceDuration);
+		yield return new WaitForSecondsRealtime(this.MaxExperienceDuration);
 		End();
 	}
 }
