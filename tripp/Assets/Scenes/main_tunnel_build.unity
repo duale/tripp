@@ -145,7 +145,7 @@ MonoBehaviour:
   Video: {fileID: 1696196307}
   Fader: {fileID: 405984649}
   FadeDuration: 4
-  MaxExperienceDuration: 340
+  MaxExperienceDuration: 366
   CameraRotation: {fileID: 610791530}
 --- !u!4 &201399364
 Transform:
@@ -26954,6 +26954,36 @@ Prefab:
       propertyPath: target.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 201399363}
+    - target: {fileID: 114076846245613106, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: gain._control
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076846245613106, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: offset._control
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076846245613106, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: offset._knobIndex
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270193103140428, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: offset._defaultLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114879476986620936, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: offset._knobIndex
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270193103140428, guid: 78287a56d56b542beae944c1e08dfc95,
+        type: 2}
+      propertyPath: offset._knobIndex
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78287a56d56b542beae944c1e08dfc95, type: 2}
   m_IsPrefabAsset: 0
