@@ -145,7 +145,7 @@ MonoBehaviour:
   Video: {fileID: 1696196307}
   Fader: {fileID: 405984649}
   FadeDuration: 4
-  MaxExperienceDuration: 366
+  MaxExperienceDuration: 204
   CameraRotation: {fileID: 610791530}
 --- !u!4 &201399364
 Transform:
