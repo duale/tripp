@@ -31,11 +31,20 @@ public class FlowController : MonoBehaviour {
 	}
 
 	protected void Start() {
-		StartCoroutine(IntroCo());
+		Begin();
+		// StartCoroutine(IntroCo());
 	}
 
 	protected void Awake() {
 		this.Fader.sharedMaterial.color = Color.black;
+	}
+
+	protected void Update() {
+		if (Input.GetKeyDown(KeyCode.Return)) {
+			if (_killRoutine == null) {
+				Begin();
+			}
+		}
 	}
 
 	private IEnumerator IntroCo() {
@@ -60,7 +69,7 @@ public class FlowController : MonoBehaviour {
 
 		yield return new WaitForSeconds(this.IntroDuration);
 
-		this.MidiControls.SetActive(true);
+		// this.MidiControls.SetActive(true);
 	}
 
 	private IEnumerator EndCo() {
