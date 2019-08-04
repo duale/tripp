@@ -10,6 +10,8 @@ public class FlowController : MonoBehaviour {
 	public float FadeDuration = 2f;
 	public int MaxExperienceDuration = 300;
 	public Reaktion.Reaktor CameraRotation;
+	public float IntroDuration = 20;
+	public GameObject MidiControls;
 
 	private bool _running;
 	private Coroutine _killRoutine;
@@ -39,6 +41,7 @@ public class FlowController : MonoBehaviour {
 	private IEnumerator IntroCo() {
 		Camera.main.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>().enabled = false;
 		this.WormholeContainer.SetActive(false);
+		this.MidiControls.SetActive(false);
 		this.Video.SetActive(true);
 		yield return SetFaderAlpha(0f);
 	}
@@ -54,6 +57,10 @@ public class FlowController : MonoBehaviour {
 		yield return SetFaderAlpha(0f);
 
 		_killRoutine = StartCoroutine(KillCo());
+
+		yield return new WaitForSeconds(this.IntroDuration);
+
+		this.MidiControls.SetActive(true);
 	}
 
 	private IEnumerator EndCo() {

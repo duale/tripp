@@ -5,13 +5,14 @@ using UnityEngine;
 public class CamControl : MonoBehaviour {
     public float MinRotation = -50;
     public float MaxRotation = 50;
+    public float DefaultDirection = 0.5f;
 
-	void Update () {
-        // float horz = Input.GetAxis("Horizontal");
-        // float vert = Input.GetAxis("Vertical");
+    protected void Awake() {
+        this.Direction = this.DefaultDirection;
+    }
+
+	protected void Update () {
         transform.Rotate(Vector3.forward * Mathf.Lerp(this.MinRotation, this.MaxRotation, this.Direction) * Time.deltaTime);
-        // transform.Rotate(Vector3.up * horz);
-
     }
 
     public float Direction { get; set; }
