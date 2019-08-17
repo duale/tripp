@@ -30,7 +30,7 @@ public class MaterialGear : MonoBehaviour
 {
     public enum TargetType { Color, Float, Vector, Texture }
 
-    public ReaktorLink reaktor;
+    // public ReaktorLink reaktor;
 
     public int materialIndex;
 
@@ -53,22 +53,22 @@ public class MaterialGear : MonoBehaviour
 
     void Awake()
     {
-        reaktor.Initialize(this);
+        // reaktor.Initialize(this);
 
         if (materialIndex == 0)
             material = GetComponent<Renderer>().material;
         else
             material = GetComponent<Renderer>().materials[materialIndex];
 
-        UpdateMaterial(0);
+        // UpdateMaterial(0);
     }
 
-    void Update()
-    {
-        UpdateMaterial(reaktor.Output);
-    }
+    // void Update()
+    // {
+    //     UpdateMaterial(reaktor.Output);
+    // }
 
-    void UpdateMaterial(float param)
+    public void UpdateMaterial(float param)
     {
         switch (targetType)
         {

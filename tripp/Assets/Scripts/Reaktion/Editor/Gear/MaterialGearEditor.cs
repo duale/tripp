@@ -29,7 +29,7 @@ namespace Reaktion {
 [CustomEditor(typeof(MaterialGear)), CanEditMultipleObjects]
 public class MaterialGearEditor : Editor
 {
-    SerializedProperty propReaktor;
+    // SerializedProperty propReaktor;
     SerializedProperty propMaterialIndex;
     SerializedProperty propTargetType;
     SerializedProperty propTargetName;
@@ -48,7 +48,7 @@ public class MaterialGearEditor : Editor
 
     void OnEnable()
     {
-        propReaktor       = serializedObject.FindProperty("reaktor");
+        // propReaktor       = serializedObject.FindProperty("reaktor");
         propMaterialIndex = serializedObject.FindProperty("materialIndex");
         propTargetType    = serializedObject.FindProperty("targetType");
         propTargetName    = serializedObject.FindProperty("targetName");
@@ -70,7 +70,7 @@ public class MaterialGearEditor : Editor
     {
         serializedObject.Update();
 
-        EditorGUILayout.PropertyField(propReaktor);
+        // EditorGUILayout.PropertyField(propReaktor);
         EditorGUILayout.PropertyField(propMaterialIndex);
         EditorGUILayout.PropertyField(propTargetType);
         EditorGUILayout.PropertyField(propTargetName);

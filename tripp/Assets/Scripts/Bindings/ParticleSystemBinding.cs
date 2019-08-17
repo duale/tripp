@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Reaktion;
 
 public class ParticleSystemBinding : MonoBehaviour {
-	public float EmissionMultiplier = 500;
+	public Modifier EmissionRate;
 
 	private ParticleSystem _ps;
 
@@ -16,8 +17,9 @@ public class ParticleSystemBinding : MonoBehaviour {
 			return _ps.emission.rateOverTime.constant;
 		}
 		set {
+			Debug.Log(value);
 			var emission = _ps.emission;
-			emission.rateOverTime = value * this.EmissionMultiplier;
+			emission.rateOverTime = this.EmissionRate.Evaluate(value);
 		}
 	}
 
