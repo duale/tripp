@@ -4,12 +4,13 @@ using UnityEngine;
 using Reaktion;
 
 public class ParticleSystemBinding : MonoBehaviour {
+	public ParticleSystem ParticleSystem;
 	public Modifier EmissionRate;
 
 	private ParticleSystem _ps;
 
 	protected void Awake() {
-		_ps = GetComponent<ParticleSystem>();
+		_ps = this.ParticleSystem;
 	}
 
 	public float Emission {

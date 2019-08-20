@@ -29,7 +29,7 @@ namespace Reaktion {
 [AddComponentMenu("Reaktion/Gear/Global Setting Gear")]
 public class GlobalSettingGear : MonoBehaviour
 {
-    public ReaktorLink reaktor;
+    // public ReaktorLink reaktor;
     public AnimationCurve timeScaleCurve = AnimationCurve.Linear(0, 0.2f, 1, 1);
 
     void OnDisable()
@@ -37,14 +37,14 @@ public class GlobalSettingGear : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void Awake()
-    {
-        reaktor.Initialize(this);
-    }
+    // void Awake()
+    // {
+    //     reaktor.Initialize(this);
+    // }
 
-    void Update()
+    public void SetTimeScale(float value)
     {
-        Time.timeScale = timeScaleCurve.Evaluate(reaktor.Output);
+        Time.timeScale = timeScaleCurve.Evaluate(value);
     }
 }
 

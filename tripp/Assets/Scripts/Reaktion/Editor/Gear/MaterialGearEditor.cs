@@ -30,12 +30,14 @@ namespace Reaktion {
 public class MaterialGearEditor : Editor
 {
     // SerializedProperty propReaktor;
+    SerializedProperty propRenderer;
     SerializedProperty propMaterialIndex;
     SerializedProperty propTargetType;
     SerializedProperty propTargetName;
     SerializedProperty propThreshold;
     SerializedProperty propColorGradient;
     SerializedProperty propFloatCurve;
+    SerializedProperty propFloatModifier;
     SerializedProperty propVectorFrom;
     SerializedProperty propVectorTo;
     SerializedProperty propTextureLow;
@@ -49,12 +51,14 @@ public class MaterialGearEditor : Editor
     void OnEnable()
     {
         // propReaktor       = serializedObject.FindProperty("reaktor");
+        propRenderer = serializedObject.FindProperty("Renderer");
         propMaterialIndex = serializedObject.FindProperty("materialIndex");
         propTargetType    = serializedObject.FindProperty("targetType");
         propTargetName    = serializedObject.FindProperty("targetName");
         propThreshold     = serializedObject.FindProperty("threshold");
         propColorGradient = serializedObject.FindProperty("colorGradient");
         propFloatCurve    = serializedObject.FindProperty("floatCurve");
+        propFloatModifier    = serializedObject.FindProperty("floatModifier");
         propVectorFrom    = serializedObject.FindProperty("vectorFrom");
         propVectorTo      = serializedObject.FindProperty("vectorTo");
         propTextureLow    = serializedObject.FindProperty("textureLow");
@@ -71,6 +75,7 @@ public class MaterialGearEditor : Editor
         serializedObject.Update();
 
         // EditorGUILayout.PropertyField(propReaktor);
+        EditorGUILayout.PropertyField(propRenderer);
         EditorGUILayout.PropertyField(propMaterialIndex);
         EditorGUILayout.PropertyField(propTargetType);
         EditorGUILayout.PropertyField(propTargetName);
@@ -85,6 +90,7 @@ public class MaterialGearEditor : Editor
             propTargetType.enumValueIndex == (int)MaterialGear.TargetType.Float)
         {
             EditorGUILayout.PropertyField(propFloatCurve);
+            EditorGUILayout.PropertyField(propFloatModifier);
         }
 
         if (!propTargetType.hasMultipleDifferentValues &&

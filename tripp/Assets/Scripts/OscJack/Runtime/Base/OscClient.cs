@@ -20,6 +20,8 @@ namespace OscJack
 
             var dest = new IPEndPoint(IPAddress.Parse(destination), port);
             _socket.Connect(dest);
+
+            UnityEngine.Debug.Log("Connecting to " + destination + ":" + port.ToString());
         }
 
         public void Dispose()
@@ -109,6 +111,17 @@ namespace OscJack
             _encoder.Append(element2);
             _encoder.Append(element3);
             _encoder.Append(element4);
+            _socket.Send(_encoder.Buffer, _encoder.Length, SocketFlags.None);
+        }
+
+        public void Send(string address, float[] elements)
+        {
+            _encoder.Clear();
+            _encoder.Append(address);
+            _encoder.Append("," + new String('f', elements.Length));
+            foreach (var element in elements) {
+                _encoder.Append(element);
+            }
             _socket.Send(_encoder.Buffer, _encoder.Length, SocketFlags.None);
         }
 

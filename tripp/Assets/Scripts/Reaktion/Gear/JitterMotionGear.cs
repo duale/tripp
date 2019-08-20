@@ -28,23 +28,29 @@ namespace Reaktion {
 [AddComponentMenu("Reaktion/Gear/Jitter Motion Gear")]
 public class JitterMotionGear : MonoBehaviour
 {
-    public ReaktorLink reaktor;
+    // public ReaktorLink reaktor;
     public Modifier positionFrequency = Modifier.Linear(0, 0.1f);
     public Modifier rotationFrequency = Modifier.Linear(0, 0.1f);
     public Modifier positionAmount = Modifier.Linear(0, 1);
     public Modifier rotationAmount = Modifier.Linear(0, 30);
 
+    private float _value;
+
     JitterMotion jitter;
 
     void Awake()
     {
-        reaktor.Initialize(this);
+        // reaktor.Initialize(this);
         jitter = GetComponent<JitterMotion>();
+    }
+
+    public void SetValue(float value) {
+        _value = value;
     }
 
     void Update()
     {
-        var o = reaktor.Output;
+        var o = _value;
 
         if (positionFrequency.enabled)
             jitter.positionFrequency = positionFrequency.Evaluate(o);

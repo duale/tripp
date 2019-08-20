@@ -34,7 +34,7 @@ public class GlobalSettingGearEditor : Editor
 
     void OnEnable()
     {
-        propReaktor = serializedObject.FindProperty("reaktor");
+        // propReaktor = serializedObject.FindProperty("reaktor");
         propTimeScaleCurve = serializedObject.FindProperty("timeScaleCurve");
     }
 
@@ -42,7 +42,7 @@ public class GlobalSettingGearEditor : Editor
     {
         serializedObject.Update ();
 
-        EditorGUILayout.PropertyField(propReaktor);
+        // EditorGUILayout.PropertyField(propReaktor);
         EditorGUILayout.PropertyField(propTimeScaleCurve);
 
         serializedObject.ApplyModifiedProperties ();

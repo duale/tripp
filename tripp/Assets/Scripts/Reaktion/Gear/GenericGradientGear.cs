@@ -34,7 +34,7 @@ public class GenericGradientGear : MonoBehaviour
     [System.Serializable] public class ColorEvent : UnityEvent<Color> {}
     [System.Serializable] public class ShaderColorEvent : UnityEvent<string, Color> {}
 
-    public ReaktorLink reaktor;
+    // public ReaktorLink reaktor;
 
     public OptionType optionType = OptionType.Color;
     public Gradient gradient;
@@ -42,21 +42,21 @@ public class GenericGradientGear : MonoBehaviour
     public ColorEvent colorTarget;
     public ShaderColorEvent shaderColorTarget;
 
-    void Awake()
-    {
-        reaktor.Initialize(this);
-    }
+    // void Awake()
+    // {
+    //     reaktor.Initialize(this);
+    // }
 
     protected void Start() {
         UpdateTarget(0);
     }
 
-    void Update()
-    {
-        UpdateTarget(reaktor.Output);
-    }
+    // void Update()
+    // {
+    //     UpdateTarget(reaktor.Output);
+    // }
 
-    void UpdateTarget(float param)
+    public void UpdateTarget(float param)
     {
         Color c = gradient.Evaluate(param);
 

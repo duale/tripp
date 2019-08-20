@@ -31,6 +31,7 @@ public class MaterialGear : MonoBehaviour
     public enum TargetType { Color, Float, Vector, Texture }
 
     // public ReaktorLink reaktor;
+    public Renderer Renderer;
 
     public int materialIndex;
 
@@ -42,6 +43,7 @@ public class MaterialGear : MonoBehaviour
     public Gradient colorGradient;
 
     public AnimationCurve floatCurve = AnimationCurve.Linear(0, 0, 1, 1);
+    public Modifier floatModifier;
 
     public Vector4 vectorFrom = Vector4.zero;
     public Vector4 vectorTo = Vector4.one;
@@ -56,9 +58,9 @@ public class MaterialGear : MonoBehaviour
         // reaktor.Initialize(this);
 
         if (materialIndex == 0)
-            material = GetComponent<Renderer>().material;
+            material = this.Renderer.material;
         else
-            material = GetComponent<Renderer>().materials[materialIndex];
+            material = this.Renderer.materials[materialIndex];
 
         // UpdateMaterial(0);
     }
@@ -76,7 +78,11 @@ public class MaterialGear : MonoBehaviour
             material.SetColor(targetName, colorGradient.Evaluate(param));
             break;
         case TargetType.Float:
-            material.SetFloat(targetName, floatCurve.Evaluate(param));
+            if (floatModifier.enabled) {
+                material.SetFloat(targetName, floatModifier.Evaluate(param));
+            } else {
+                material.SetFloat(targetName, floatCurve.Evaluate(param));
+            }
             break;
         case TargetType.Vector:
             material.SetVector(targetName, Vector4.Lerp(vectorFrom, vectorTo, param));

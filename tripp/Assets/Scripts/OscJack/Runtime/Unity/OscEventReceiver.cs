@@ -10,6 +10,8 @@ namespace OscJack
     [AddComponentMenu("OSC/Event Receiver")]
     public sealed class OscEventReceiver : MonoBehaviour
     {
+        public float DefaultOnAwake;
+
         #region Receiver data types
 
         public enum DataType
@@ -159,6 +161,12 @@ namespace OscJack
                 case DataType.String:
                     if (_stringQueue == null) _stringQueue = new Queue<string>();
                     break;
+            }
+        }
+
+        void Start() {
+            if (_dataType == DataType.Float) {
+                _floatEvent.Invoke(this.DefaultOnAwake);
             }
         }
 

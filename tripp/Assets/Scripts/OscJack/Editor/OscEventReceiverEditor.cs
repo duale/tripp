@@ -10,6 +10,8 @@ namespace OscJack
     [CanEditMultipleObjects, CustomEditor(typeof(OscEventReceiver))]
     class OscEventReceiverEditor : Editor
     {
+        SerializedProperty _default;
+
         SerializedProperty _udpPort;
         SerializedProperty _oscAddress;
         SerializedProperty _dataType;
@@ -32,6 +34,7 @@ namespace OscJack
 
         void OnEnable()
         {
+            _default    = serializedObject.FindProperty("DefaultOnAwake");
             _udpPort    = serializedObject.FindProperty("_udpPort");
             _oscAddress = serializedObject.FindProperty("_oscAddress");
             _dataType   = serializedObject.FindProperty("_dataType");
@@ -50,6 +53,8 @@ namespace OscJack
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+
+            EditorGUILayout.PropertyField(_default);
 
             EditorGUILayout.DelayedIntField(_udpPort, Labels.UDPPortNumber);
             EditorGUILayout.DelayedTextField(_oscAddress, Labels.OSCAddress);

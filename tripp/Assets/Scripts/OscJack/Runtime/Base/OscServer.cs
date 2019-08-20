@@ -129,7 +129,6 @@ namespace OscJack
                 try
                 {
                     int dataRead = _socket.Receive(buffer);
-                    UnityEngine.Debug.Log(dataRead);
                     if (!_disposed && dataRead > 0)
                         parser.Parse(buffer, dataRead);
                 }

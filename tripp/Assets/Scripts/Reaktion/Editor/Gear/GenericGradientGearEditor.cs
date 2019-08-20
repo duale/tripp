@@ -29,7 +29,7 @@ namespace Reaktion {
 [CustomEditor(typeof(GenericGradientGear)), CanEditMultipleObjects]
 public class GenericGradientGearEditor : Editor
 {
-    SerializedProperty propReaktor;
+    // SerializedProperty propReaktor;
     SerializedProperty propGradient;
     SerializedProperty propOptionType;
     SerializedProperty propColorTarget;
@@ -38,7 +38,7 @@ public class GenericGradientGearEditor : Editor
 
     void OnEnable()
     {
-        propReaktor  = serializedObject.FindProperty("reaktor");
+        // propReaktor  = serializedObject.FindProperty("reaktor");
         propGradient = serializedObject.FindProperty("gradient");
         propOptionType   = serializedObject.FindProperty("optionType");
         propColorTarget   = serializedObject.FindProperty("colorTarget");
@@ -50,7 +50,7 @@ public class GenericGradientGearEditor : Editor
     public override void OnInspectorGUI() {
         serializedObject.Update ();
 
-        EditorGUILayout.PropertyField(propReaktor);
+        // EditorGUILayout.PropertyField(propReaktor);
         EditorGUILayout.PropertyField(propOptionType);
         EditorGUILayout.PropertyField(propGradient);
 
