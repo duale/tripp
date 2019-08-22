@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Tunnel Noise Color 2
   m_Shader: {fileID: 4800000, guid: 55c14467c4e399a42ac49adb0b5e696b, type: 3}
   m_ShaderKeywords: 
@@ -119,7 +120,7 @@ Material:
     - _VSpeedDistort: -0.4
     - _VSpeedMain: -0.2
     - _ZWrite: 1
-    - __dirty: 1
+    - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.972549, g: 0, b: 0.78435844, a: 0}
