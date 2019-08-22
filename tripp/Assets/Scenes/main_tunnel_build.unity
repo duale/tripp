@@ -25378,7 +25378,7 @@ MonoBehaviour:
   - Path: /main/fader7
     Value: 0
   - Path: /main/fader8
-    Value: 0
+    Value: 1
   - Path: /main/fader9
     Value: 0.5
   - Path: /main/fader10
