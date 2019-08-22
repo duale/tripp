@@ -58,11 +58,7 @@ public class FlowController : MonoBehaviour {
 				_client.Send("/title");
 				break;
 			case FlowState.Intro:
-				// _client.Send("/intro");
 				this.IntroAudio.GetSpectrumData(_spectrum, 0, FFTWindow.Rectangular);
-				// for (var i = 0; i < _spectrum3.Length; i++) {
-				// 	_spectrum3[i] += _spectrum[i];
-				// }
 
 				System.Array.Copy(_spectrum, _spectrum4, _spectrum4.Length);
 
@@ -74,23 +70,14 @@ public class FlowController : MonoBehaviour {
 					}
 					_spectrum2[i] = total * 2;
 				}
-				// string data = string.Join(" ", _spectrum2);
-
-				// Debug.Log(data);
+				
+				_client.Send("/intro");
 				_client.Send("/intro/analyzer", _spectrum2);
+
 				break;
-			// case FlowState.Play:
-			// 	System.Text.StringBuilder sb = new System.Text.StringBuilder();
-			// 	for (var i = 0; i < _spectrum3.Length; i++) {
-			// 		if (_spectrum3[i] > 1) {
-			// 			sb.Append(i.ToString());
-			// 			sb.Append(":");
-			// 			sb.Append(_spectrum3[i].ToString());
-			// 			sb.Append(" ");
-			// 		}
-			// 	}
-			// 	Debug.Log(sb.ToString());
-			// 	break;
+			case FlowState.Play:
+				_client.Send("/main");
+				break;
 		}
 	}
 
@@ -106,6 +93,7 @@ public class FlowController : MonoBehaviour {
 
 	private IEnumerator BeginCo() {
 		this.State = FlowState.Intro;
+		UpdateTimer(0, "/intro/timer");
 		_client.Send("/intro");
 
 		yield return SetFaderAlpha(1f);
@@ -122,15 +110,45 @@ public class FlowController : MonoBehaviour {
 			source.Play();
 		}
 
-		while (this.IntroAudio.isPlaying) yield return null;
+		var timerAudio = this.ControllableAudio[0];
 
-		// _killRoutine = StartCoroutine(KillCo());
+		while (this.IntroAudio.isPlaying) {
+			// GetTimeLeftForAudioSource(timerAudio);
+			UpdateTimer(GetTimeLeftForAudioSource(this.IntroAudio), "/intro/timer");
+			yield return null;
+		}
 
 		this.State = FlowState.Play;
-		_client.Send("/main");
+		// _client.Send("/main");
 
-		while (this.ControllableAudio[0].isPlaying) yield return null;
+		// yield return null;
+
+		while (timerAudio.isPlaying) {
+			// GetTimeLeftForAudioSource(timerAudio);
+			UpdateTimer(GetTimeLeftForAudioSource(timerAudio), "/main/timer");
+			yield return null;
+		}
+
+		UpdateTimer(0, "/main/timer");
+
 		End();
+	}
+
+	private int GetTimeLeftForAudioSource(AudioSource source) {
+		var left = (1f - (float)source.timeSamples / source.clip.samples) * source.clip.length;
+
+		return Mathf.FloorToInt(Mathf.Max((float)left, 0f));
+	}
+
+	private void UpdateTimer(int seconds, string address) {
+		var timeString = "";
+
+		if (seconds > 0) {
+			var t = System.TimeSpan.FromSeconds(seconds);		
+			timeString = string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
+		}
+
+		_client.Send(address, timeString);
 	}
 
 	private IEnumerator EndCo() {
